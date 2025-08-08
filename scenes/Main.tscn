@@ -20,6 +20,7 @@ script = ExtResource("1_vcsgt")
 [node name="Managers" type="Node" parent="."]
 
 [node name="TimeManager" parent="Managers" instance=ExtResource("1_rvslj")]
+seconds_per_day = 60.0
 
 [node name="SaveManager" parent="Managers" instance=ExtResource("2_rarhs")]
 

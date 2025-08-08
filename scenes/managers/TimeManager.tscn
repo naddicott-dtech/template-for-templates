@@ -4,4 +4,3 @@
 
 [node name="TimeManager" type="Node"]
 script = ExtResource("1_kp3em")
-seconds_per_day = null

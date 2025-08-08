@@ -1,6 +1,6 @@
 extends Node
-@export var seconds_per_day := 60
-var _accumulated_seconds := 60
+@export var seconds_per_day: float = 60.0
+var _accumulated_seconds: float = 0.0
 
 func _process(delta: float) -> void:
 	SignalBus.tick.emit(delta)
