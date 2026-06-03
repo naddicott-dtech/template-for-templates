@@ -74,7 +74,7 @@ template-for-templates/
 ├─ scenes/
 │  ├─ Main.tscn / .gd   # the frame: the level holder + managers + UI
 │  ├─ levels/
-│  │  └─ level1.tscn    # YOUR LEVEL — put your content here (empty frame to start)
+│  │  └─ Level1.tscn    # YOUR LEVEL — put your content here (empty frame to start)
 │  ├─ ui/
 │  │  └─ HUD.tscn / .gd # on-screen money & day display + debug button
 │  └─ managers/
@@ -84,7 +84,7 @@ template-for-templates/
 
 `Main.tscn` is the frame: `WorldRoot` holds your current level
 (`WorldRoot/Level1`), `Managers` runs the systems, and `UI` is what's on screen.
-Your content goes inside **`level1.tscn`** — its `TileMapLayer` (the map),
+Your content goes inside **`Level1.tscn`** — its `TileMapLayer` (the map),
 `Entities` (players, enemies, items), and `Spawners`. Build there.
 
 ---
