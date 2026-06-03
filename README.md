@@ -38,7 +38,7 @@ file is short and commented.
    for announcements and updates the money/day text on screen.
 4. **`scenes/managers/TimeManager.gd`** — the game clock; a tidy example of doing
    something a little each frame.
-5. **`scenes/managers/SaveManager.gd`** — saving and loading. The most advanced
+5. **`autoload/SaveManager.gd`** — saving and loading. The most advanced
    file. You mostly just *call* it; you rarely edit it.
 6. **`scenes/Main.gd` / `scenes/Main.tscn`** — the scene the game starts on, where
    each template adds its own content.
@@ -66,23 +66,26 @@ file is short and commented.
 
 ```
 template-for-templates/
-├─ autoload/
+├─ autoload/            # always-on systems, reachable anywhere by name
 │  ├─ Globals.gd        # game-wide values: money, day, settings
-│  └─ SignalBus.gd      # the bulletin board of signals
+│  ├─ SignalBus.gd      # the bulletin board of signals
+│  ├─ SaveManager.gd    # save / load to a file
+│  └─ AudioManager.gd   # play sounds
 ├─ scenes/
-│  ├─ Main.tscn / .gd   # the starting scene + world layout
+│  ├─ Main.tscn / .gd   # the frame: the level holder + managers + UI
+│  ├─ levels/
+│  │  └─ level1.tscn    # YOUR LEVEL — put your content here (empty frame to start)
 │  ├─ ui/
 │  │  └─ HUD.tscn / .gd # on-screen money & day display + debug button
 │  └─ managers/
-│     ├─ TimeManager.gd   # advances the day, ticks every frame
-│     ├─ SaveManager.gd   # save/load to a file
-│     └─ AudioManager.tscn # (placeholder — sound goes here later)
+│     └─ TimeManager.gd # advances the day, ticks every frame
 └─ project.godot        # Godot project settings (autoloads are registered here)
 ```
 
-The `Main.tscn` world is pre-organized into spots for your content:
-`WorldRoot` holds a `TileMapLayer` (your level), an `Entities` node (players,
-enemies, items), and `Spawners`. Put your stuff in those.
+`Main.tscn` is the frame: `WorldRoot` holds your current level
+(`WorldRoot/Level1`), `Managers` runs the systems, and `UI` is what's on screen.
+Your content goes inside **`level1.tscn`** — its `TileMapLayer` (the map),
+`Entities` (players, enemies, items), and `Spawners`. Build there.
 
 ---
 

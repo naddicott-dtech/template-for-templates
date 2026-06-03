@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dfg7sg4fy4xy"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+
+[node name="Entities" type="Node2D" parent="."]
+
+[node name="Spawners" type="Node2D" parent="."]
